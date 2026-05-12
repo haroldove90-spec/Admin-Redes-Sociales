@@ -14,9 +14,10 @@ type SidebarProps = {
 
 const menuItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'ia-center', label: 'AI Studio', icon: Sparkles },
   { id: 'messages', label: 'Messages', icon: MessageSquare },
+  { id: 'leads', label: 'Lead Flow', icon: Users },
   { id: 'analitica', label: 'Insights', icon: TrendingUp },
-  { id: 'audiencias', label: 'Privacy', icon: Shield },
   { id: 'configuracion', label: 'Settings', icon: Settings },
 ];
 
