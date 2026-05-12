@@ -1,0 +1,17 @@
+{
+  "name": "Admin redes sociales pro",
+  "short_name": "Admin Pro",
+  "description": "Panel de administración profesional para redes sociales con automatización de IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E4E3E0",
+  "theme_color": "#141414",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/10309/10309322.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ export function AIGenerator() {
       const prompt = `Eres un experto copywriter de marketing. Crea un copy atractivo para un anuncio de Facebook e Instagram para el siguiente producto o servicio: "${product}". El copy debe incluir un gancho emocional, beneficios claros y una llamada a la acción irresistible. Responde solo con el texto del anuncio.`;
       
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt,
       });
       

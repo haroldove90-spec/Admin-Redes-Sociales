@@ -1,6 +1,7 @@
 import React from 'react';
-import { LayoutDashboard, Megaphone, Sparkles, Users, Settings, ChevronRight, TrendingUp } from 'lucide-react';
+import { LayoutDashboard, Megaphone, Sparkles, Users, Settings, ChevronRight, TrendingUp, DownloadCloud } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { useEffect, useState } from 'react';
 
 type SidebarProps = {
   activeTab: string;
@@ -20,6 +21,26 @@ const menuItems = [
 ];
 
 export function Sidebar({ activeTab, setActiveTab, isOpen, onClose }: SidebarProps) {
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+
+  useEffect(() => {
+    const handler = (e: any) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handler);
+    return () => window.removeEventListener('beforeinstallprompt', handler);
+  }, []);
+
+  const handleInstall = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      setDeferredPrompt(null);
+    }
+  };
+
   const handleItemClick = (id: string) => {
     setActiveTab(id);
     if (onClose) onClose();
@@ -70,11 +91,23 @@ export function Sidebar({ activeTab, setActiveTab, isOpen, onClose }: SidebarPro
           </ul>
         </nav>
 
-        <div className="p-4 border-t border-[#141414] bg-white-50">
-          <div className="text-[10px] uppercase opacity-50 font-bold mb-1 font-mono">Account Info</div>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 border border-[#141414] bg-[#F27D26]"></div>
-            <div className="text-xs font-mono font-bold">PRO_USER_9901</div>
+        <div className="p-4 border-t border-[#141414] bg-white-50 space-y-4">
+          {deferredPrompt && (
+            <button 
+              onClick={handleInstall}
+              className="w-full flex items-center justify-center gap-2 py-3 bg-orange-500 text-black border-2 border-[#141414] font-mono font-bold uppercase text-[11px] shadow-[4px_4px_0_#141414] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all animate-bounce"
+            >
+              <DownloadCloud className="w-4 h-4" />
+              Instalar App
+            </button>
+          )}
+          
+          <div>
+            <div className="text-[10px] uppercase opacity-50 font-bold mb-1 font-mono">Account Info</div>
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 border border-[#141414] bg-[#F27D26]"></div>
+              <div className="text-xs font-mono font-bold">PRO_USER_9901</div>
+            </div>
           </div>
         </div>
       </aside>
