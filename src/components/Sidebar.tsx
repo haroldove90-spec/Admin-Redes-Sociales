@@ -1,44 +1,28 @@
 import React from 'react';
-import { LayoutDashboard, Megaphone, Sparkles, Users, Settings, ChevronRight, TrendingUp, DownloadCloud } from 'lucide-react';
+import { LayoutDashboard, Megaphone, Sparkles, Users, Settings, ChevronRight, TrendingUp, DownloadCloud, MessageSquare, Shield, LogOut, User, Sun } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
-import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 
 type SidebarProps = {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   isOpen?: boolean;
   onClose?: () => void;
+  deferredPrompt?: any;
+  onInstall?: () => void;
 };
 
 const menuItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'ia-center', label: 'Centro de Creación IA', icon: Sparkles },
-  { id: 'analitica', label: 'Analítica Predictiva', icon: TrendingUp },
-  { id: 'leads', label: 'Flujo de Leads', icon: Users },
-  { id: 'campañas', label: 'Campañas', icon: Megaphone },
-  { id: 'audiencias', label: 'Audiencias', icon: Users },
-  { id: 'configuracion', label: 'Configuración', icon: Settings },
+  { id: 'messages', label: 'Messages', icon: MessageSquare },
+  { id: 'analitica', label: 'Insights', icon: TrendingUp },
+  { id: 'audiencias', label: 'Privacy', icon: Shield },
+  { id: 'configuracion', label: 'Settings', icon: Settings },
 ];
 
-export function Sidebar({ activeTab, setActiveTab, isOpen, onClose }: SidebarProps) {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-
-  useEffect(() => {
-    const handler = (e: any) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-    };
-    window.addEventListener('beforeinstallprompt', handler);
-    return () => window.removeEventListener('beforeinstallprompt', handler);
-  }, []);
-
+export function Sidebar({ activeTab, setActiveTab, isOpen, onClose, deferredPrompt, onInstall }: SidebarProps) {
   const handleInstall = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      setDeferredPrompt(null);
-    }
+    if (onInstall) onInstall();
   };
 
   const handleItemClick = (id: string) => {
@@ -51,64 +35,93 @@ export function Sidebar({ activeTab, setActiveTab, isOpen, onClose }: SidebarPro
       {/* Mobile Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-[#141414]/50 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-[#141414]/20 backdrop-blur-sm z-40 lg:hidden"
           onClick={onClose}
         />
       )}
 
       <aside className={cn(
-        "fixed inset-y-0 left-0 z-50 lg:relative lg:translate-x-0 w-64 border-r border-[#141414] bg-[#E4E3E0] h-screen transition-transform duration-300 ease-in-out flex flex-col shadow-[4px_0_0_#141414] lg:shadow-none",
-        isOpen ? "translate-x-0" : "-translate-x-full"
+        "fixed inset-y-0 left-0 z-50 lg:relative lg:translate-x-0 w-64 bg-white h-[calc(100vh-2rem)] my-4 mx-4 rounded-[2rem] shadow-xl transition-transform duration-300 ease-in-out flex flex-col overflow-hidden",
+        isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       )}>
-        <div className="p-6 border-b border-[#141414] bg-[#141414] text-[#E4E3E0] flex justify-between items-center">
-          <h1 className="text-lg font-bold italic tracking-tighter uppercase font-serif">MarketAI</h1>
-          <button onClick={onClose} className="lg:hidden p-1 hover:bg-white/10 rounded-sm">
-            <ChevronRight className="w-5 h-5 rotate-180" />
-          </button>
+        <div className="p-8 pb-4 flex flex-col items-center border-b border-gray-100">
+           <div className="w-12 h-12 mb-4">
+             <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-gray-800">
+               <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+             </svg>
+           </div>
+           
+           <div className="relative mb-2">
+             <div className="w-16 h-16 rounded-full border-2 border-red-500 p-1">
+               <div className="w-full h-full rounded-full bg-gray-100 flex items-center justify-center text-red-500 font-bold overflow-hidden">
+                 <User className="w-8 h-8" />
+               </div>
+             </div>
+             <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></div>
+           </div>
+           
+           <h2 className="text-sm font-bold text-gray-800 tracking-wider">SIMOEL KEHN</h2>
         </div>
 
-        <nav className="flex-1 py-4 overflow-y-auto">
-          <ul className="space-y-1 px-2">
+        <nav className="flex-1 py-6 px-4">
+          <ul className="space-y-4">
             {menuItems.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className="relative">
                 <button
                   onClick={() => handleItemClick(item.id)}
                   className={cn(
-                    "w-full flex items-center gap-3 px-4 py-3 text-sm font-bold transition-all duration-100 rounded-sm uppercase tracking-tight",
+                    "w-full flex items-center gap-4 px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-2xl relative z-10",
                     activeTab === item.id 
-                      ? "bg-[#141414] text-[#E4E3E0]" 
-                      : "hover:bg-[#d4d3d0] text-[#141414] border border-transparent hover:border-[#141414]"
+                      ? "text-white sidebar-gradient shadow-lg" 
+                      : "text-gray-400 hover:text-gray-600 hover:bg-gray-50"
                   )}
                 >
                   <item.icon className={cn(
-                    "w-4 h-4",
-                    activeTab === item.id ? "text-orange-400" : "text-[#141414] opacity-70"
+                    "w-5 h-5 transition-colors",
+                    activeTab === item.id ? "text-white" : "text-gray-400"
                   )} />
                   <span>{item.label}</span>
                 </button>
+                {activeTab === item.id && (
+                  <motion.div 
+                    layoutId="sidebar-active"
+                    className="absolute -right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-red-500"
+                  />
+                )}
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="p-4 border-t border-[#141414] bg-white-50 space-y-4">
+        <div className="p-6 border-t border-gray-100 space-y-2">
+          <button className="w-full flex items-center gap-4 px-6 py-2 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors">
+            <User className="w-5 h-5" />
+            <span>My Account</span>
+          </button>
+          <button className="w-full flex items-center justify-between px-6 py-2 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors">
+            <div className="flex items-center gap-4">
+              <Sun className="w-5 h-5" />
+              <span>Light Theme</span>
+            </div>
+            <div className="w-4 h-4 rounded-full bg-gray-200 border border-gray-300"></div>
+          </button>
+          
+          <div className="pt-4">
+            <button className="w-full flex items-center gap-4 px-6 py-2 bg-gray-800 text-white rounded-xl text-sm font-semibold hover:bg-gray-900 transition-all">
+              <LogOut className="w-5 h-5" />
+              <span>Logout</span>
+            </button>
+          </div>
+          
           {deferredPrompt && (
             <button 
               onClick={handleInstall}
-              className="w-full flex items-center justify-center gap-2 py-3 bg-orange-500 text-black border-2 border-[#141414] font-mono font-bold uppercase text-[11px] shadow-[4px_4px_0_#141414] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all animate-bounce"
+              className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-red-500 text-white rounded-xl font-bold uppercase text-[10px] hover:bg-red-600 transition-all shadow-md"
             >
               <DownloadCloud className="w-4 h-4" />
               Instalar App
             </button>
           )}
-          
-          <div>
-            <div className="text-[10px] uppercase opacity-50 font-bold mb-1 font-mono">Account Info</div>
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 border border-[#141414] bg-[#F27D26]"></div>
-              <div className="text-xs font-mono font-bold">PRO_USER_9901</div>
-            </div>
-          </div>
         </div>
       </aside>
     </>
