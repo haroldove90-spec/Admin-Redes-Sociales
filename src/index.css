@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:italic,wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --animate-spin-slow: spin 3s linear infinite;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  @apply antialiased bg-[#E4E3E0] text-[#141414];
+}
+
+/* Custom High Density patterns */
+.brutalist-border {
+  @apply border border-[#141414];
+}
+
+.brutalist-card {
+  @apply bg-white border border-[#141414] rounded-none;
+}
+
+.label-hint {
+  @apply text-[10px] font-serif italic uppercase opacity-60;
+}
+
+.data-mono {
+  @apply font-mono;
+}
+
+.glass-container {
+  @apply bg-white/40 backdrop-blur-md border-[#141414]/10 shadow-[0_8px_32px_0_rgba(20,20,20,0.1)];
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
