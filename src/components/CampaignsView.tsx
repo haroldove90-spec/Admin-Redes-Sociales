@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search, Filter, Plus, MoreHorizontal, Megaphone, Target, MousePointer2, TrendingUp } from 'lucide-react';
 import { motion } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 const allCampaigns = [
   { id: 1, name: 'Promo Verano 2026', platform: 'Meta Ads', status: 'Activa', spend: '$12,400', reach: '1.2M', ctr: '3.4%', roas: '4.2x' },

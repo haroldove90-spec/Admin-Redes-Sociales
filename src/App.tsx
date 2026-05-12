@@ -18,7 +18,7 @@ import { AudiencesView } from './components/AudiencesView';
 import { DashboardView } from './components/DashboardView';
 import { Bell, Search, Calendar, ChevronDown, Settings, Menu, X, DownloadCloud, Plus, LayoutDashboard, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from './lib/utils';
 import { useEffect } from 'react';
 
 export default function App() {

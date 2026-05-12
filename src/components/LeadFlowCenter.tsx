@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Users, MessageSquare, Zap, CheckCircle2, MoreVertical, Search, Check, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 const leads = [
   { id: 1, name: "Carlos Ruiz", source: "Facebook Ads", interest: "Alta", status: "Contactado por IA", time: "Hace 5 min" },

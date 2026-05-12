@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Settings, Palette, Type, Link, Upload, CheckCircle2, AlertCircle, Info, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 type Personality = 'sofisticado' | 'amigable' | 'tecnico' | 'vendedor';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import { ShoppingCart, Users, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRight, Globe, Calendar, ChevronDown } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 const data = [
   { name: 'Ene', value: 300 },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, Megaphone, Sparkles, Users, Settings, ChevronRight, TrendingUp, DownloadCloud, MessageSquare, Shield, LogOut, User, Sun } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 import { motion } from 'motion/react';
 
 type SidebarProps = {

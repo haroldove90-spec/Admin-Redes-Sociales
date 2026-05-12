@@ -2,7 +2,7 @@ import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Sparkles, TrendingUp, Zap, FileText, Play, Download, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 const trendData = [
   { name: 'S1', conversions: 320, spend: 2800 },

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sparkles, Send, Loader2, Target, MessageSquare, Globe, UserCheck, Eye, Copy, Check, Megaphone, Image as LucideImage } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 import { motion, AnimatePresence } from 'motion/react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '../lib/utils';
 
 type Objective = 'ventas' | 'whatsapp' | 'trafico';
 type Tone = 'profesional' | 'divertido' | 'urgente' | 'persuasivo';
