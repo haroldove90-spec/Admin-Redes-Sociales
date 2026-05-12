@@ -13,6 +13,8 @@ import { AICreationCenter } from './components/AICreationCenter';
 import { PredictiveAnalytics } from './components/PredictiveAnalytics';
 import { LeadFlowCenter } from './components/LeadFlowCenter';
 import { BrandSettings } from './components/BrandSettings';
+import { CampaignsView } from './components/CampaignsView';
+import { AudiencesView } from './components/AudiencesView';
 import { Bell, Search, Calendar, ChevronDown, Settings, Menu, X } from 'lucide-react';
 
 export default function App() {
@@ -45,7 +47,10 @@ export default function App() {
                 {activeTab === 'dashboard' ? 'Dashboard Overview' : 
                  activeTab === 'ia-center' ? 'Centro de Creación IA' : 
                  activeTab === 'analitica' ? 'Analítica Predictiva' : 
-                 activeTab === 'leads' ? 'Flujo de Leads & IA' : activeTab}
+                 activeTab === 'leads' ? 'Flujo de Leads & IA' : 
+                 activeTab === 'campañas' ? 'Gestión de Campañas' :
+                 activeTab === 'audiencias' ? 'Base de Audiencias' : 
+                 activeTab === 'configuracion' ? 'Identidad de Marca' : activeTab}
               </span>
             </div>
           </div>
@@ -101,11 +106,19 @@ export default function App() {
             <LeadFlowCenter />
           )}
 
+          {activeTab === 'campañas' && (
+            <CampaignsView />
+          )}
+
+          {activeTab === 'audiencias' && (
+            <AudiencesView />
+          )}
+
           {activeTab === 'configuracion' && (
             <BrandSettings />
           )}
 
-          {activeTab !== 'dashboard' && activeTab !== 'ia-center' && activeTab !== 'analitica' && activeTab !== 'leads' && activeTab !== 'configuracion' && (
+          {activeTab !== 'dashboard' && activeTab !== 'ia-center' && activeTab !== 'analitica' && activeTab !== 'leads' && activeTab !== 'campañas' && activeTab !== 'audiencias' && activeTab !== 'configuracion' && (
             <div className="border border-[#141414] bg-white p-20 flex flex-col items-center justify-center text-center">
               <div className="w-16 h-16 border border-[#141414] flex items-center justify-center mb-6">
                 <Settings className="w-8 h-8 animate-spin-slow opacity-20" />
