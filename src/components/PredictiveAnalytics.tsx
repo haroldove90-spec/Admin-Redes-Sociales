@@ -53,8 +53,8 @@ export function PredictiveAnalytics() {
       {/* Top Banner Actions */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold font-mono tracking-tighter uppercase">Predictive Analysis Node</h2>
-          <p className="text-[10px] font-mono opacity-50 uppercase">Session: 2026_Q2_HYPER_OPTIMIZATION</p>
+          <h2 className="text-xl font-bold font-mono tracking-tighter uppercase">Nodo de Análisis Predictivo</h2>
+          <p className="text-[10px] font-mono opacity-50 uppercase">Sesión: 2026_Q2_HIPER_OPTIMIZACION</p>
         </div>
         <div className="flex gap-2">
           <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#141414] text-xs font-mono font-bold uppercase transition-all hover:bg-slate-50 active:translate-y-0.5">
@@ -155,7 +155,7 @@ export function PredictiveAnalytics() {
         <div className="p-4 border-b border-[#141414] bg-[#f9f9f8] flex justify-between items-center">
           <h3 className="text-xs font-bold font-mono uppercase tracking-widest">Análisis de Desempeño de Creativos</h3>
           <div className="flex gap-2">
-             <div className="flex items-center gap-1 text-[9px] font-mono opacity-50"><div className="w-2 h-2 bg-emerald-500"></div> Optimo</div>
+             <div className="flex items-center gap-1 text-[9px] font-mono opacity-50"><div className="w-2 h-2 bg-emerald-500"></div> Óptimo</div>
              <div className="flex items-center gap-1 text-[9px] font-mono opacity-50"><div className="w-2 h-2 bg-yellow-500"></div> Alerta</div>
              <div className="flex items-center gap-1 text-[9px] font-mono opacity-50"><div className="w-2 h-2 bg-rose-500"></div> Crítico</div>
           </div>

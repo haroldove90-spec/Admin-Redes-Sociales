@@ -191,7 +191,7 @@ export function AICreationCenter() {
               <div className="glass-container brutalist-border p-6 bg-white/40 backdrop-blur-md">
                 <div className="flex items-center gap-2 mb-6">
                   <MessageSquare className="w-4 h-4 text-orange-600" />
-                  <span className="text-xs font-mono font-bold uppercase tracking-widest">Variantes de Copy</span>
+                  <span className="text-xs font-mono font-bold uppercase tracking-widest">Variantes de Anuncio</span>
                 </div>
                 <div className="space-y-4">
                   {result.variants.map((variant, i) => (
@@ -216,7 +216,7 @@ export function AICreationCenter() {
                 <div className="glass-container brutalist-border p-6 bg-white/40 backdrop-blur-md flex flex-col">
                   <div className="flex items-center gap-2 mb-4">
                     <UserCheck className="w-4 h-4 text-orange-600" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest">Segmentación</span>
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest">Público Objetivo</span>
                   </div>
                   <div className="space-y-4 flex-1">
                     <div>
@@ -243,7 +243,7 @@ export function AICreationCenter() {
                 <div className="glass-container brutalist-border p-6 bg-[#141414] text-[#E4E3E0] backdrop-blur-md flex flex-col">
                   <div className="flex items-center gap-2 mb-4">
                     <LucideImage className="w-4 h-4 text-orange-400" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-orange-400">Análisis de Imagen</span>
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-orange-400">Concepto Visual</span>
                   </div>
                   <p className="text-xs font-serif italic leading-relaxed opacity-80">
                     "{result.imageAnalysis}"

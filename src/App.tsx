@@ -80,7 +80,7 @@ export default function App() {
                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                <input 
                  type="text" 
-                 placeholder="Search anything..." 
+                 placeholder="Buscar algo..." 
                  className="w-full bg-white rounded-2xl pl-12 pr-4 py-3 text-sm focus:outline-none shadow-sm text-gray-600 font-medium border border-gray-50 focus:border-red-200 transition-all"
                />
              </div>
@@ -125,7 +125,7 @@ export default function App() {
                     className="absolute top-full right-0 mt-4 w-80 bg-white rounded-3xl shadow-2xl z-50 overflow-hidden p-2"
                   >
                     <div className="p-4 border-b border-gray-100 flex justify-between items-center text-xs font-bold uppercase tracking-widest text-gray-800">
-                      <span>Notifications</span>
+                      <span>Notificaciones</span>
                       <X className="w-4 h-4 cursor-pointer" onClick={() => setShowNotifications(false)} />
                     </div>
                     <div className="max-h-80 overflow-y-auto">
@@ -181,25 +181,25 @@ export default function App() {
                   <BrandSettings />
                 )}
 
-                {activeTab === 'messages' && (
+                 {activeTab === 'messages' && (
                   <div className="card-modern p-12 lg:p-20 flex flex-col items-center justify-center text-center">
                     <MessageSquare className="w-16 h-16 text-gray-200 mb-6" />
-                    <h2 className="text-xl font-bold text-gray-800">Messages Center</h2>
-                    <p className="text-sm text-gray-400 mt-2">Connecting to secure messaging protocol...</p>
+                    <h2 className="text-xl font-bold text-gray-800">Centro de Mensajes</h2>
+                    <p className="text-sm text-gray-400 mt-2">Conectando a protocolo de mensajería seguro...</p>
                   </div>
                 )}
 
-                {/* Catch-all for undefined tabs */}
+                 {/* Catch-all for undefined tabs */}
                 {!['dashboard', 'ia-center', 'analitica', 'leads', 'campañas', 'audiencias', 'configuracion', 'messages'].includes(activeTab) && (
                   <div className="card-modern p-12 lg:p-20 flex flex-col items-center justify-center text-center">
                     <Settings className="w-16 h-16 animate-spin-slow text-gray-200 mb-6" />
-                    <h2 className="text-xl font-bold text-gray-800">Section Under Construction</h2>
-                    <p className="text-sm text-gray-400 mt-2">This feature is being optimized for the new interface.</p>
+                    <h2 className="text-xl font-bold text-gray-800">Sección en Construcción</h2>
+                    <p className="text-sm text-gray-400 mt-2">Esta funcionalidad se está optimizando para la nueva interfaz.</p>
                     <button 
                       onClick={() => setActiveTab('dashboard')}
                       className="mt-8 px-8 py-3 bg-gray-800 text-white rounded-2xl font-bold hover:bg-gray-900 transition-all shadow-lg"
                     >
-                      Return to Dashboard
+                      Volver al Panel
                     </button>
                   </div>
                 )}

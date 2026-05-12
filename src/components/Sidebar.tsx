@@ -13,12 +13,12 @@ type SidebarProps = {
 };
 
 const menuItems = [
-  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'ia-center', label: 'AI Studio', icon: Sparkles },
-  { id: 'messages', label: 'Messages', icon: MessageSquare },
-  { id: 'leads', label: 'Lead Flow', icon: Users },
-  { id: 'analitica', label: 'Insights', icon: TrendingUp },
-  { id: 'configuracion', label: 'Settings', icon: Settings },
+  { id: 'dashboard', label: 'Panel de Control', icon: LayoutDashboard },
+  { id: 'ia-center', label: 'Centro IA', icon: Sparkles },
+  { id: 'messages', label: 'Mensajes', icon: MessageSquare },
+  { id: 'leads', label: 'Flujo de Leads', icon: Users },
+  { id: 'analitica', label: 'Estadísticas', icon: TrendingUp },
+  { id: 'configuracion', label: 'Configuración', icon: Settings },
 ];
 
 export function Sidebar({ activeTab, setActiveTab, isOpen, onClose, deferredPrompt, onInstall }: SidebarProps) {
@@ -97,12 +97,12 @@ export function Sidebar({ activeTab, setActiveTab, isOpen, onClose, deferredProm
         <div className="p-6 border-t border-gray-100 space-y-2">
           <button className="w-full flex items-center gap-4 px-6 py-2 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors">
             <User className="w-5 h-5" />
-            <span>My Account</span>
+            <span>Mi Cuenta</span>
           </button>
           <button className="w-full flex items-center justify-between px-6 py-2 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors">
             <div className="flex items-center gap-4">
               <Sun className="w-5 h-5" />
-              <span>Light Theme</span>
+              <span>Tema Claro</span>
             </div>
             <div className="w-4 h-4 rounded-full bg-gray-200 border border-gray-300"></div>
           </button>
@@ -110,7 +110,7 @@ export function Sidebar({ activeTab, setActiveTab, isOpen, onClose, deferredProm
           <div className="pt-4">
             <button className="w-full flex items-center gap-4 px-6 py-2 bg-gray-800 text-white rounded-xl text-sm font-semibold hover:bg-gray-900 transition-all">
               <LogOut className="w-5 h-5" />
-              <span>Logout</span>
+              <span>Cerrar Sesión</span>
             </button>
           </div>
           

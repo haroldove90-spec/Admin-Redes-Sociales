@@ -128,7 +128,7 @@ export function LeadFlowCenter() {
           <div className="p-3 border-b border-[#141414] bg-[#141414] text-white flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="text-[10px] font-mono font-bold uppercase">Chat Simulator_Live</span>
+              <span className="text-[10px] font-mono font-bold uppercase">Simulador Chat_Vivo</span>
             </div>
             <MoreVertical className="w-4 h-4 opacity-50" />
           </div>
@@ -176,8 +176,8 @@ export function LeadFlowCenter() {
 
           <div className="relative z-10 space-y-6">
             <div className="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-widest">
-              <span>Health_Metrics</span>
-              <span className="text-orange-400">Stable</span>
+              <span>Métricas_Salud</span>
+              <span className="text-orange-400">Estable</span>
             </div>
 
             <div className="flex items-center justify-between gap-6">

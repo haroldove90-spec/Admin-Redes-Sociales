@@ -12,10 +12,10 @@ const segmentData = [
 ];
 
 const topAudiences = [
-  { name: 'Tech Enthusiasts', size: '2.1M', affinity: 'High', source: 'Pixel Meta' },
-  { name: 'Early Adopters', size: '850k', affinity: 'Very High', source: 'LTV Data' },
-  { name: 'Digital Nomads', size: '1.2M', affinity: 'Medium', source: 'Lookalike 5%' },
-  { name: 'Software Engineers', size: '420k', affinity: 'Very High', source: 'LinkedIn Sync' },
+  { name: 'Entusiastas de Tecnología', size: '2.1M', affinity: 'Alta', source: 'Pixel Meta' },
+  { name: 'Adoptadores Tempranos', size: '850k', affinity: 'Muy Alta', source: 'LTV Data' },
+  { name: 'Nómadas Digitales', size: '1.2M', affinity: 'Media', source: 'Lookalike 5%' },
+  { name: 'Ingenieros de Software', size: '420k', affinity: 'Muy Alta', source: 'LinkedIn Sync' },
 ];
 
 export function AudiencesView() {

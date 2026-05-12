@@ -4,11 +4,11 @@ import { motion } from 'motion/react';
 import { cn } from '@/src/lib/utils';
 
 const allCampaigns = [
-  { id: 1, name: 'Promo Verano 2026', platform: 'Meta Ads', status: 'Active', spend: '$12,400', reach: '1.2M', ctr: '3.4%', roas: '4.2x' },
-  { id: 2, name: 'Lanzamiento Colección Invierno', platform: 'Google Ads', status: 'Paused', spend: '$8,200', reach: '850k', ctr: '2.1%', roas: '3.1x' },
-  { id: 3, name: 'Retargeting Carritos Abandonados', platform: 'TikTok Ads', status: 'Active', spend: '$4,100', reach: '420k', ctr: '5.8%', roas: '6.5x' },
-  { id: 4, name: 'Brand Awareness - LatAm', platform: 'YouTube', status: 'Active', spend: '$15,000', reach: '2.5M', ctr: '1.2%', roas: '--' },
-  { id: 5, name: 'Captación Leads Webinar', platform: 'LinkedIn Ads', status: 'Completed', spend: '$3,500', reach: '120k', ctr: '2.5%', roas: '2.8x' },
+  { id: 1, name: 'Promo Verano 2026', platform: 'Meta Ads', status: 'Activa', spend: '$12,400', reach: '1.2M', ctr: '3.4%', roas: '4.2x' },
+  { id: 2, name: 'Lanzamiento Colección Invierno', platform: 'Google Ads', status: 'Pausada', spend: '$8,200', reach: '850k', ctr: '2.1%', roas: '3.1x' },
+  { id: 3, name: 'Retargeting Carritos Abandonados', platform: 'TikTok Ads', status: 'Activa', spend: '$4,100', reach: '420k', ctr: '5.8%', roas: '6.5x' },
+  { id: 4, name: 'Brand Awareness - LatAm', platform: 'YouTube', status: 'Activa', spend: '$15,000', reach: '2.5M', ctr: '1.2%', roas: '--' },
+  { id: 5, name: 'Captación Leads Webinar', platform: 'LinkedIn Ads', status: 'Completada', spend: '$3,500', reach: '120k', ctr: '2.5%', roas: '2.8x' },
 ];
 
 export function CampaignsView() {
@@ -18,7 +18,7 @@ export function CampaignsView() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold font-mono tracking-tighter uppercase">Gestión de Campañas</h2>
-          <p className="text-[10px] font-mono opacity-50 uppercase">Total: 12 Active | 4 Paused</p>
+          <p className="text-[10px] font-mono opacity-50 uppercase">Total: 12 Activas | 4 Pausadas</p>
         </div>
         <div className="flex gap-2">
           <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#141414] text-xs font-mono font-bold uppercase hover:bg-slate-50 transition-colors">
@@ -87,8 +87,8 @@ export function CampaignsView() {
                   <td className="px-6 py-4 border-r border-[#141414]/10 text-center">
                     <span className={cn(
                       "px-2 py-0.5 border border-[#141414] text-[9px] font-bold uppercase",
-                      camp.status === 'Active' ? 'bg-emerald-50 text-emerald-800' : 
-                      camp.status === 'Paused' ? 'bg-yellow-50 text-yellow-800' : 'bg-slate-100 text-slate-800'
+                      camp.status === 'Activa' ? 'bg-emerald-50 text-emerald-800' : 
+                      camp.status === 'Pausada' ? 'bg-yellow-50 text-yellow-800' : 'bg-slate-100 text-slate-800'
                     )}>
                       {camp.status}
                     </span>

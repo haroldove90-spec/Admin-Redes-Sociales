@@ -5,18 +5,18 @@ import { ShoppingCart, Users, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRig
 import { cn } from '@/src/lib/utils';
 
 const data = [
-  { name: 'Jan', value: 300 },
+  { name: 'Ene', value: 300 },
   { name: 'Feb', value: 200 },
   { name: 'Mar', value: 100 },
-  { name: 'Apr', value: 320 },
+  { name: 'Abr', value: 320 },
   { name: 'May', value: 500 },
   { name: 'Jun', value: 250 },
   { name: 'Jul', value: 100 },
-  { name: 'Aug', value: 420 },
+  { name: 'Ago', value: 420 },
   { name: 'Sep', value: 350 },
   { name: 'Oct', value: 120 },
   { name: 'Nov', value: 250 },
-  { name: 'Dec', value: 150 },
+  { name: 'Dic', value: 150 },
 ];
 
 const miniChartData = [
@@ -31,8 +31,8 @@ export function DashboardView() {
         {/* Stock Gauge Card */}
         <div className="card-modern p-6 flex flex-col items-center">
            <div className="w-full flex justify-between items-center mb-4">
-             <h3 className="text-sm font-bold text-gray-800">Stock Products</h3>
-             <span className="text-[10px] text-gray-400 font-bold">See all</span>
+             <h3 className="text-sm font-bold text-gray-800">Productos en Stock</h3>
+             <span className="text-[10px] text-gray-400 font-bold">Ver todos</span>
            </div>
            
            <div className="relative w-48 h-24 mb-4 overflow-hidden">
@@ -70,8 +70,8 @@ export function DashboardView() {
         {/* Lorem Ipsum Wave Card */}
         <div className="card-modern p-6">
            <div className="flex justify-between items-center mb-2">
-             <h3 className="text-sm font-bold text-gray-800">Lorem Ipsum</h3>
-             <span className="text-[10px] text-gray-400 font-bold">See all</span>
+             <h3 className="text-sm font-bold text-gray-800">Resumen Semanal</h3>
+             <span className="text-[10px] text-gray-400 font-bold">Ver todos</span>
            </div>
            
            <div className="h-32 w-full">
@@ -90,8 +90,8 @@ export function DashboardView() {
            
            <div className="mt-4 flex items-center justify-between">
               <div>
-                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Unique Viewers</h4>
-                <p className="text-lg font-bold text-gray-800 tracking-tight">6,503 <span className="text-[10px] text-gray-400 font-medium">/This weeks</span></p>
+                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Visitantes Únicos</h4>
+                <p className="text-lg font-bold text-gray-800 tracking-tight">6,503 <span className="text-[10px] text-gray-400 font-medium">/Esta semana</span></p>
               </div>
               <div className="flex flex-col items-center">
                  <div className="w-10 h-10 rounded-full border-4 border-green-500 border-t-transparent flex items-center justify-center text-[10px] font-bold text-green-600">45%</div>
@@ -105,7 +105,7 @@ export function DashboardView() {
         {/* Dolor Sit Amet Bars Card */}
         <div className="card-modern p-6">
            <div className="flex justify-between items-center mb-6">
-             <h3 className="text-sm font-bold text-gray-800">Dolor sit amet</h3>
+             <h3 className="text-sm font-bold text-gray-800">Desempeño Diario</h3>
              <div className="flex items-center gap-1">
                <TrendingUp className="w-4 h-4 text-green-500" />
                <span className="text-lg font-bold text-gray-800">$450.00</span>
@@ -119,7 +119,7 @@ export function DashboardView() {
                    <div className="absolute inset-0 bg-red-500 rounded-t-lg scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-300"></div>
                  </div>
                  <span className="text-[10px] font-bold text-white bg-red-500 w-full text-center py-0.5 rounded-sm">
-                   {['S', 'M', 'T', 'W', 'T', 'F', 'S'][i]}
+                   {['D', 'L', 'M', 'M', 'J', 'V', 'S'][i]}
                  </span>
                </div>
              ))}
@@ -127,8 +127,8 @@ export function DashboardView() {
 
            <div className="mt-6 flex justify-between items-center border-t border-gray-50 pt-4">
               <div>
-                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Total Profit</h4>
-                <p className="text-lg font-bold text-gray-800 tracking-tight">$780.84 <span className="text-[10px] text-gray-400 font-medium">/This weeks</span></p>
+                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Ganancia Total</h4>
+                <p className="text-lg font-bold text-gray-800 tracking-tight">$780.84 <span className="text-[10px] text-gray-400 font-medium">/Esta semana</span></p>
               </div>
               <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center text-green-600">
                 <DollarSign className="w-5 h-5" />
@@ -140,10 +140,10 @@ export function DashboardView() {
       {/* Middle Row: Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: 'New Customers', value: '335', color: 'red', icon: Users, trend: '+ 85%' },
-          { label: 'Total Orders', value: '650', color: 'red', icon: ShoppingCart, trend: '+ 25%' },
-          { label: 'Total Sales', value: '3,402', color: 'red', icon: TrendingUp, trend: '+ 25%' },
-          { label: 'Revenue', value: '$6,200', color: 'red', icon: DollarSign, trend: '- 45%', down: true },
+          { label: 'Nuevos Clientes', value: '335', color: 'red', icon: Users, trend: '+ 85%' },
+          { label: 'Pedidos Totales', value: '650', color: 'red', icon: ShoppingCart, trend: '+ 25%' },
+          { label: 'Ventas Totales', value: '3,402', color: 'red', icon: TrendingUp, trend: '+ 25%' },
+          { label: 'Ingresos', value: '$6,200', color: 'red', icon: DollarSign, trend: '- 45%', down: true },
         ].map((item, i) => (
           <div key={i} className="card-modern p-4 flex items-center justify-between group overflow-hidden relative">
             <div className={`w-14 h-14 sidebar-gradient absolute left-0 top-0 rounded-br-3xl flex items-center justify-center text-white z-10`}>
@@ -179,11 +179,11 @@ export function DashboardView() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 card-modern p-8">
            <div className="flex justify-between items-center mb-8">
-             <h3 className="text-lg font-bold text-gray-800">Data Activity</h3>
+             <h3 className="text-lg font-bold text-gray-800">Actividad de Datos</h3>
              <div className="flex items-center gap-3">
-                <div className="px-4 py-1.5 bg-gray-800 text-white rounded-xl text-[10px] font-bold">Wednesday, 2 July 2025</div>
+                <div className="px-4 py-1.5 bg-gray-800 text-white rounded-xl text-[10px] font-bold">Miércoles, 2 Julio 2025</div>
                 <div className="px-4 py-1.5 bg-red-500 text-white rounded-xl text-[10px] font-bold flex items-center gap-2">
-                  <Calendar className="w-3 h-3" /> Lifetime <ChevronDown className="w-3 h-3" />
+                  <Calendar className="w-3 h-3" /> Histórico <ChevronDown className="w-3 h-3" />
                 </div>
              </div>
            </div>
@@ -209,7 +209,7 @@ export function DashboardView() {
         </div>
 
         <div className="card-modern p-8 flex flex-col h-[400px]">
-           <h3 className="text-lg font-bold text-gray-800 mb-8">Company Expenses</h3>
+           <h3 className="text-lg font-bold text-gray-800 mb-8">Gastos de la Empresa</h3>
            
            <div className="flex-1 relative flex flex-col items-center justify-center">
               <svg viewBox="0 0 100 50" className="w-full max-w-[200px] transform -translate-y-4">
